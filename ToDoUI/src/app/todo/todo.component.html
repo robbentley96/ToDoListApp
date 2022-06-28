@@ -1,0 +1,30 @@
+<div class="container border">
+    <div class="row">
+        <div class="col-8">
+            <p style="color:#00008b">{{todoName}}</p>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-danger align-self-right" type="button" (enter)="deleteToDo()" (click)="deleteToDo()">Delete</button>
+        </div>
+    </div>
+    <div class="row" *ngFor="let task of taskList">
+        <div class="col-8">
+            <app-task [taskId]="task.id" [taskName]="task.name"></app-task>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <input [(ngModel)]="newTaskName" class="form-control" type="text" placeholder="New Task" style="border-color:black">
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="button" (enter)="createTask()" (click)="createTask()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+</div>
